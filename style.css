@@ -1,0 +1,299 @@
+:root{
+	--backgroundColor: rgb(240, 240, 240);
+	--onBackgroundColor: #3c3c3b;;
+	--onBackgroundVariantColor: grey;
+
+	--surfaceColor: white;
+	--onSurfaceColor: #3c3c3b;
+
+	--surfaceVariantColor: black;
+	--onSurfaceVariantColor: rgb(220, 220, 220);;
+}
+
+body{
+    font-family: 'Futura', Arial, sans-serif;
+    font-weight: normal;	
+    margin: 0;
+    padding: 0;
+    background: var(--backgroundColor);
+
+    font-size: 13px;
+    color: var(--onSurfaceColor);
+    line-height: normal;
+    word-wrap: break-word;
+}
+
+article.post>figure{
+	margin: 5em 0;
+}
+
+article.post video{
+	width: 100%;
+}
+
+article.post>figure figcaption{
+	text-align: right;
+	margin: 1em;
+	font-style: italic;
+	font-size: smaller;
+}
+
+h1, h2{
+	margin-top: 2em;
+	margin-bottom: 2em;
+}
+
+a{
+	text-decoration: none;
+	color: inherit;
+}
+a:hover{
+	text-decoration: underline !important;
+}
+
+video{
+	object-fit: inherit;
+}
+
+header{
+	text-align: center;
+    margin: 180px 0;
+    line-height: 1;
+}
+
+header h1{
+	font-size: 16px;
+    font-weight: normal;
+}
+
+header nav{
+	font-size: 14px;
+    font-weight: normal;
+    padding: 0;
+    font-style: italic;
+}
+
+header nav a{
+	margin: 0 0.5em;
+}
+
+main{
+    max-width: 1000px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
+
+    padding: 0 50px;
+}
+
+@media (max-width: 768px){
+	main{
+		padding: 0 10px;
+	}
+}
+
+article img{
+	max-width: 100%;
+	max-height: 95vh;
+	/*display: block;*/
+}
+
+footer{
+	color: var(--onBackgroundVariantColor);
+	text-align: right;
+	margin: 1em;
+	margin-top: 15em;
+}
+
+.posts{
+	max-width: 1280px;
+    margin-left: 0px;
+    padding-left: 0px;
+    list-style-type: none;
+}
+.post{
+	margin: 100px 0;
+    padding: 20px 60px;
+    background: var(--surfaceColor);
+}
+
+.post>figure{
+	margin: 0;
+}
+
+.post>figure figcaption{
+	text-align: right;
+}
+
+.post>figure figcaption a:hover{
+	text-decoration: none;
+}
+.post>figure figcaption a:hover h2{
+	text-decoration: underline;
+}
+
+.post>figure figcaption h2 {
+	font-size: 13px;
+	margin: 0.67em 0;
+    font-weight: normal;
+}
+
+.post>figure figcaption p{
+	text-align: right;
+	font-style: italic;
+	font-size: 10px;
+	margin: 0.83em 0;
+}
+
+.post.video video{
+	max-width: 100%;
+	min-height: 80vh;
+}
+
+.post.video, .post.vimeo{
+	text-align: center;
+	color: var(--onSurfaceVariantColor);
+	background: var(--surfaceVariantColor);
+	border-radius: 3px;
+}
+
+.post.video video, .post.vimeo iframe{
+	margin-bottom: 1.5em;
+	max-height: 80vh;
+}
+
+.post.video video:focus{
+	outline: none;
+}
+
+/*CV*/
+body.page-cv main{
+	max-width: 48em;
+}
+
+ul{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+
+li{
+	margin: 0;
+}
+
+h2{
+	font-weight: normal;
+	margin-top: 2em;
+}
+
+h3{
+	margin-top: 2em;
+	font-weight: normal;
+}
+
+/* COMPONENTS */
+/* Gallery */
+figure.gallery{
+	display: flex;
+ 	flex-wrap: wrap;
+ 	flex-direction: row;
+  flex-flow: wrap;
+ 	gap: 10px;
+}
+figure.gallery img{
+	display: block;
+	width: 100%;
+    height: 100%;
+	object-fit: cover;
+}
+
+figure.gallery>img,
+figure.gallery>video{
+  display: block;
+  /*width:  auto;*/
+  /*height: auto;*/
+/*  min-height: 30vh;
+  max-height: 80vh;*/
+  /*flex-shrink: 1;*/
+  flex-grow: 1;
+  flex-basis: 25%;
+  width:  25%;
+  object-fit: cover;
+  /*width: 1px;*/
+  margin:  2px;
+}
+
+figure>img:nth-of-type(1){
+	width:  100%;
+}
+
+figure>figcaption{
+	width: 100%;
+}
+
+figure.gallery>video{
+	object-fit: contain;
+	max-height: 90vh;
+}
+
+
+
+article.post h1, article.post>h2{
+	text-align: center;
+}
+
+/* Markdown specific */
+
+/* inline figure with caption */
+
+/*p{
+	text-indent: 1em;
+	margin: 0;
+}*/
+
+p>img, video{
+	display: block;
+	width: 100%;
+	max-height: 95vh;
+	object-fit: contain;
+	object-position: center;
+}
+p>img~em, video~p>em
+{
+	display: block;
+	font-variant: italic;
+	/*text-align: center;*/
+	margin: 1em;
+	font-size: smaller;
+}
+p>img~em:last-child{
+	margin-bottom: 5em;
+}
+
+hr{
+	width: 66%;
+	margin: 3em auto;
+    border: none;
+    border-bottom: thin lightgrey solid;
+}
+
+/*Overview*/
+table{
+  border: 2px solid lightblue;
+  border-collapse: collapse;
+}
+
+/*th{
+	border: 1px solid black;
+}
+*/
+
+table td{
+	padding: 1em;
+	border: 1px solid lavender;
+}
+
+figure{
+	margin: 5em;
+}
