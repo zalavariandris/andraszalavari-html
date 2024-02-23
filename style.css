@@ -315,11 +315,13 @@ article ol{
 	margin: 2em auto;
 }
 
-article h1, article h2, article h3, article h4{
-	margin-bottom: 0rem;
-}
-article ul{
-	margin-top: 0rem;
+
+
+article h2+ul,
+article h3+ul,
+article h4+ul
+{
+	margin-top: -2em;
 }
 
 article{
