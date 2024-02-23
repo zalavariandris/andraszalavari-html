@@ -6,6 +6,48 @@
     <title>András Zalavári | Böhringer Waltz</title>
     <link rel="stylesheet" href="./style.css">
     <script src="./script.js"></script>
+    <script>
+        // detect iOS
+        function isiOS() {
+            return [
+                'iPad Simulator',
+                'iPhone Simulator',
+                'iPod Simulator',
+                'iPad',
+                'iPhone',
+                'iPod'
+            ].includes(navigator.platform)
+            // iPad on iOS 13 detection
+            || (navigator.userAgent.includes("Mac") && "ontouchend" in document)
+        }
+
+        // set all video autoplay to true and remove controls on non-iOS devices
+        document.addEventListener("DOMContentLoaded", (event) => {
+            if (!isiOS()) {
+                
+                const videos = document.getElementsByTagName("video");
+                for(let video of videos) {
+                    video.setAttribute("autoplay", "true");
+                    video.removeAttribute("controls");
+                }
+            }else{
+                // const videos = document.getElementsByTagName("video");
+                // for(let video of videos) {
+                //     video.play();
+                //     // video.removeAttribute("controls");
+
+                //     video.addEventListener("click", () => {
+                //         video.play();
+                //         video.addEventListener('webkitendfullscreen', (e) => { //code to destroy my custom modal on close of x icon in ios native close button });
+                //         // video.removeAttribute("controls");
+                //         video.addAttribute("controls");
+                //         video.stop()
+                //         })
+                //     })
+                // }
+            }
+        });
+    </script>
 </head>
 <body class=page-böhringer-waltz>
     <header>
@@ -22,13 +64,13 @@
                 <!-- Plane Tree Allée - video -->
                 <figure class="gallery">
                     <!-- VIDEO POST -->
-                    <video controls loop autoplay muted poster=./media/travelling-perspective-in-storm-snapshot.png>
+                    <video controls="false" loop muted poster=./media/travelling-perspective-in-storm-snapshot.png>
                         <source src="https://github.com/zalavariandris/andraszalavari-html/raw/main/media/travelling-perspective-in-storm.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                     <!-- CAPTION -->
                     <figcaption>
-                        <h2><a href=./2019-rectscan_video.html>Traveling Perspective in Storm - video installation</a></h2>
+                        <h2>Traveling Perspective in Storm - video installation</h2>
                         <p>Paksi képtár</p>
                         <p>2020</p>
                     </figcaption>
@@ -76,9 +118,8 @@
                 <!-- Plane Tree Allée - video -->
                 <figure class="gallery">
                     <!-- VIDEO POST -->
-                    <video controls loop autoplay muted poster=./media/platansor1_rectscan_video-snapshot.png>
+                    <video autoplay loop muted playsinline poster=./media/platansor1_rectscan_video-snapshot.png>
                         <source src=https://github.com/zalavariandris/andraszalavari-jekyll/raw/master/assets/media/platansor1_rectscan_video.mp4 type="video/mp4">
-                        
                         Your browser does not support the video tag.
                     </video>
                     <!-- CAPTION -->
@@ -94,7 +135,7 @@
                 <!-- Artifical perspective -->
                 <figure class="gallery">
                     <!-- VIDEO POST -->
-                    <video controls loop autoplay muted poster=./media/vlcsnap-2019-06-13-10h05m57s048.png>
+                    <video autoplay loop muted playsinline poster=./media/vlcsnap-2019-06-13-10h05m57s048.png>
                         <source src=https://github.com/zalavariandris/andraszalavari_jekyll/raw/master/assets/media/artifical_perspective_imaginary_direction-SD.mp4 type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
@@ -191,7 +232,7 @@
                 <!-- Caterpillar's Relativity -->
                 <figure class="gallery">
                     <!-- VIDEO POST -->
-                    <video controls loop autoplay muted poster=./media/vlcsnap-2019-06-14-00h49m31s115.png>
+                    <video autoplay loop muted playsinline poster=./media/vlcsnap-2019-06-14-00h49m31s115.png>
                         <source src=https://github.com/zalavariandris/andraszalavari_jekyll/raw/master/assets/media/caterpillar_relativity-720p.mp4 type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
@@ -208,7 +249,7 @@
                 <!-- Balance II. -->
                 <figure class="gallery">
                     <!-- VIDEO POST -->
-                    <video controls loop autoplay muted poster=./media/vlcsnap-2019-06-14-00h24m26s869.png>
+                    <video autoplay loop muted playsinline poster=./media/vlcsnap-2019-06-14-00h24m26s869.png>
                         <source src="https://github.com/zalavariandris/andraszalavari_jekyll/raw/master/assets/media/Balance_II..mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
@@ -225,7 +266,7 @@
                 <!-- I'm not moving anywhere -->
                 <figure class="gallery">
                     <!-- VIDEO POST -->
-                    <video controls loop autoplay muted poster=./media/vlcsnap-2019-06-14-00h27m30s283.png>
+                    <video autoplay loop muted playsinline poster=./media/vlcsnap-2019-06-14-00h27m30s283.png>
                         <source src=https://github.com/zalavariandris/andraszalavari_jekyll/raw/master/assets/media/Im_not_moving_anywhere-SD.mp4 type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
@@ -242,7 +283,7 @@
                 <!-- I'm not going anywhere -->
                 <figure class="gallery">
                     <!-- VIDEO POST -->
-                    <video controls loop autoplay muted poster=./media/vlcsnap-2019-06-14-00h35m30s276.png>
+                    <video autoplay loop muted playsinline poster=./media/vlcsnap-2019-06-14-00h35m30s276.png>
                         <source src=https://github.com/zalavariandris/andraszalavari_jekyll/raw/master/assets/media/Im_not_going_anywhere-SD.mp4 type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
@@ -259,7 +300,7 @@
                 <!-- Spotting -->
                 <figure class="gallery">
                     <!-- VIDEO POST -->
-                    <video controls loop autoplay muted poster=./media/vlcsnap-2019-06-14-00h31m19s933.png>
+                    <video autoplay loop muted playsinline poster=./media/vlcsnap-2019-06-14-00h31m19s933.png>
                         <source src=https://github.com/zalavariandris/andraszalavari_jekyll/raw/master/assets/media/Spotting-SD.mp4 type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
@@ -276,7 +317,7 @@
                 <!-- Böhringer Waltz -->
                 <figure class="gallery">
                     <!-- VIDEO POST -->
-                    <video controls loop autoplay muted poster=./media/vlcsnap-2019-06-14-00h33m01s198.png>
+                    <video autoplay loop muted playsinline poster=./media/vlcsnap-2019-06-14-00h33m01s198.png>
                         <source src=https://github.com/zalavariandris/andraszalavari_jekyll/raw/master/assets/media/bohringer_waltz-SD.mp4 type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
@@ -293,7 +334,7 @@
                 <!-- Adam and Eve -->
                 <figure class="gallery">
                     <!-- VIDEO POST -->
-                    <video controls loop autoplay muted poster=./media/vlcsnap-2019-06-14-00h34m02s849.png>
+                    <video autoplay loop muted playsinline poster=./media/vlcsnap-2019-06-14-00h34m02s849.png>
                         <source src=https://github.com/zalavariandris/andraszalavari_jekyll/raw/master/assets/media/adam_and_eve-640p.mp4 type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
