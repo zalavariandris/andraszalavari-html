@@ -274,6 +274,10 @@ figure{
 }
 
 /*ARTICLE in project pages*/
+
+article{
+	margin: auto;
+}
 article.post>figure{
 	margin: 5em 0;
 }
@@ -300,9 +304,25 @@ article.post h1, article.post>h2{
 	text-align: center;
 }
 
-article p{
+article p, 
+article h1, 
+article h2, 
+article h3, 
+article h4, 
+article ul, 
+article ol{
 	max-width: 64rem;
 	margin: 2em auto;
+}
+
+article h1, article h2, article h3, article h4{
+	margin-bottom: 0rem;
+}
+article ul{
+	margin-top: 0rem;
+}
+
+article{
 	line-height: 1.5rem;
 }
 
