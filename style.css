@@ -326,6 +326,8 @@ article{
 	line-height: 1.5rem;
 }
 
+
+
 /*MOBILE OVERRIDES*/
 @media (max-width: 768px){
 	main{
@@ -336,5 +338,8 @@ article{
 	}
 	.posts li{
 		padding: 10px;
+	}
+	article{
+		white-space: wrap !important;
 	}
 }
